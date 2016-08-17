@@ -1,0 +1,9 @@
+<div class="container">
+	<h1>Organizations:</h1>
+	<ul>
+		<li *ngFor="let organization of organizations">
+		{{organization.organizationName}}
+		</li>
+	</ul>
+	<div class="error" *ngIf="errorMessage">{{errorMessage}}</div>
+</div>

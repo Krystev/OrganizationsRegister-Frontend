@@ -1,0 +1,52 @@
+.ng-valid[required] {
+  border: 2px solid #42A948;
+}
+
+.ng-invalid {
+  border: 2px solid #a94442;
+}
+
+input, textarea {
+	margin: 0 auto;
+	width: 100%;
+}
+
+.form-group {
+	margin: 0 auto;
+	margin: 10px;
+}
+
+h1 {
+	text-align: center;
+	width: 100%;
+	margin: 0 auto;
+	width: 100%;
+}
+.form_buttons {
+	text-align: center;
+}
+
+.buttons {
+	margin: 5px auto;
+	width: 200px;
+}
+
+.container {
+	padding: 20px;
+	border: 1px solid black;
+	width: 350px;
+	margin: 0 auto;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	background: #c0c0c0;
+}
+
+.list {
+	margin-top: 10px;
+	width: 100%;
+}
+
+textarea {
+	resize: none;
+	height: 150px;
+}
