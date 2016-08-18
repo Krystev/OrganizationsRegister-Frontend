@@ -6,7 +6,7 @@ import { Headers, RequestOptions } from '@angular/http';
 
 @Injectable()
 export class OrganizationService {
-	headers: Headers;
+	
   constructor (private http: Http) {}
   
   private organizationsUrl = 'http://localhost:8080/list.json';  // URL to web API
@@ -14,11 +14,22 @@ export class OrganizationService {
   getOrganizations(): Observable<Organization[]> {
     return this.http.get(this.organizationsUrl)
                     .map(this.extractData)
-                    .catch(this.handleError);
-  }
-  
+                    .map((organizations: Array<any>) => {
+      					let result:Array<Organization> = [];
+      								if (organizations) {
+        							organizations.forEach((organization) => {
+          							result.push(new Organization(organization.id, organization.organizationName, 
+                                organization.registerNumber, organization.registrationDate, organization.ownerName, 
+                                organization.organizationAddress, organization.organizationPostCode, 
+                                organization.organizationOccupation, organization.occupationDescription));
+        				});
+      				}
+      					return result;
+     				});
+ 
+ 
   private extractData(res: Response) {
-    let body = res.json().items;
+    let body = res.json();
     return body;
   }
   

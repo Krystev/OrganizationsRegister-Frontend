@@ -1,4 +1,4 @@
-System.register(['@angular/core', '@angular/http', 'rxjs/Observable'], function(exports_1, context_1) {
+System.register(['@angular/core', '@angular/http', '../model/organization', 'rxjs/Observable'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['@angular/core', '@angular/http', 'rxjs/Observable'], function(
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, http_1, Observable_1;
+    var core_1, http_1, organization_1, Observable_1;
     var OrganizationService;
     return {
         setters:[
@@ -19,6 +19,9 @@ System.register(['@angular/core', '@angular/http', 'rxjs/Observable'], function(
             },
             function (http_1_1) {
                 http_1 = http_1_1;
+            },
+            function (organization_1_1) {
+                organization_1 = organization_1_1;
             },
             function (Observable_1_1) {
                 Observable_1 = Observable_1_1;
@@ -32,10 +35,18 @@ System.register(['@angular/core', '@angular/http', 'rxjs/Observable'], function(
                 OrganizationService.prototype.getOrganizations = function () {
                     return this.http.get(this.organizationsUrl)
                         .map(this.extractData)
-                        .catch(this.handleError);
+                        .map(function (organizations) {
+                        var result = [];
+                        if (organizations) {
+                            organizations.forEach(function (organization) {
+                                result.push(new organization_1.Organization(organization.id, organization.organizationName, organization.registerNumber, organization.registrationDate, organization.ownerName, organization.organizationAddress, organization.organizationPostCode, organization.organizationOccupation, organization.occupationDescription));
+                            });
+                        }
+                        return result;
+                    });
                 };
                 OrganizationService.prototype.extractData = function (res) {
-                    var body = res.json().items;
+                    var body = res.json();
                     return body;
                 };
                 OrganizationService.prototype.handleError = function (error) {
