@@ -1,9 +1,30 @@
-<div class="container">
+<div class="organizations_list">
 	<h1>Organizations:</h1>
-	<ul> 
-		<li *ngFor="let organization of organizations">
-		{{organization.organizationName}}
-		</li>
-	</ul>
+		<table>
+			<thead>
+				<tr class="columns_names">
+					<th>Organization Name</th>
+					<th>Register Number</th>
+					<th>Registration Date</th>
+					<th>Address</th>
+					<th>Post Code</th>
+					<th>Owner Name</th>
+					<th>Organization Occupation</th>
+					<th>Occupation Description</th>
+				</tr>
+			</thead>
+			<tbody>
+			<tr *ngFor="let organization of organizations">
+				<td>{{organization.organizationName}}</td>
+				<td>{{organization.registerNumber}}</td>
+				<td>{{organization.registrationDate}}</td>
+				<td>{{organization.organizationAddress}}</td>
+				<td>{{organization.organizationPostCode}}</td>
+				<td>{{organization.ownerName}}</td>
+				<td>{{organization.organizationOccupation}}</td>
+				<td>{{organization.occupationDescription}}</td>
+			</tr>
+			</tbody>
+		</table>
 	<div class="error" *ngIf="errorMessage">{{errorMessage}}</div>
 </div>

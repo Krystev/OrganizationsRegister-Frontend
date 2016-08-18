@@ -11,6 +11,36 @@ input, textarea {
 	width: 100%;
 }
 
+table {
+	margin: 0 auto;
+	margin-top: 20px;
+	width: 1300px;
+}
+
+td {
+	margin: 70px;
+	padding: 10px 0;
+}
+
+tr:NTH-CHILD(even) {background-color: #f2f2f2}
+tr:HOVER {background-color: #e6e6e6;}
+.columns_names:HOVER {background: none} 
+
+.organizations_list {
+	padding: 20px;
+	margin: 0 auto;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+thead {
+	margin-bottom: 10px;
+}
+
+th {
+	text-align: left;
+}
+
 .form-group {
 	margin: 0 auto;
 	margin: 10px;
