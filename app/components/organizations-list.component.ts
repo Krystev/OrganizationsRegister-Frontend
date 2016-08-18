@@ -3,11 +3,12 @@ import { Organization } from '../model/organization';
 import { bootstrap } from '@angular/platform-browser-dynamic';
 import { OrganizationService } from '../services/organization.service';
 import '../rxjs-operators';
+import {HTTP_PROVIDERS}    from '@angular/http';
 
 @Component({
   selector: 'organizations-list',
-  templateUrl: 'app/components/organizations-list.component.html'
-  
+  templateUrl: 'app/components/organizations-list.component.html',
+  providers:  [HTTP_PROVIDERS, OrganizationService]
 })
 
 export class OrganizationsListComponent implements OnInit { 
@@ -26,6 +27,9 @@ getOrganizations() {
 }
 
 getBack() {window.location.href = './index'}
-
-
 }
+
+bootstrap(OrganizationsListComponent, [
+  HTTP_PROVIDERS,
+  OrganizationService  
+]);

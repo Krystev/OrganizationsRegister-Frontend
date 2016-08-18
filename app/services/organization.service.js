@@ -35,8 +35,8 @@ System.register(['@angular/core', '@angular/http', 'rxjs/Observable'], function(
                         .catch(this.handleError);
                 };
                 OrganizationService.prototype.extractData = function (res) {
-                    var body = res.json();
-                    return body.data || {};
+                    var body = res.json().items;
+                    return body;
                 };
                 OrganizationService.prototype.handleError = function (error) {
                     var errMsg = (error.message) ? error.message :

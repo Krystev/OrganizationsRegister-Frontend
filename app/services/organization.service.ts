@@ -6,6 +6,7 @@ import { Headers, RequestOptions } from '@angular/http';
 
 @Injectable()
 export class OrganizationService {
+	headers: Headers;
   constructor (private http: Http) {}
   
   private organizationsUrl = 'http://localhost:8080/list.json';  // URL to web API
@@ -17,8 +18,8 @@ export class OrganizationService {
   }
   
   private extractData(res: Response) {
-    let body = res.json();
-    return body.data || { };
+    let body = res.json().items;
+    return body;
   }
   
   

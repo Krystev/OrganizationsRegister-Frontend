@@ -1,4 +1,4 @@
-System.register(['@angular/core', '../services/organization.service', '../rxjs-operators'], function(exports_1, context_1) {
+System.register(['@angular/core', '@angular/platform-browser-dynamic', '../services/organization.service', '../rxjs-operators', '@angular/http'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,17 +10,23 @@ System.register(['@angular/core', '../services/organization.service', '../rxjs-o
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, organization_service_1;
+    var core_1, platform_browser_dynamic_1, organization_service_1, http_1;
     var OrganizationsListComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             },
+            function (platform_browser_dynamic_1_1) {
+                platform_browser_dynamic_1 = platform_browser_dynamic_1_1;
+            },
             function (organization_service_1_1) {
                 organization_service_1 = organization_service_1_1;
             },
-            function (_1) {}],
+            function (_1) {},
+            function (http_1_1) {
+                http_1 = http_1_1;
+            }],
         execute: function() {
             OrganizationsListComponent = (function () {
                 function OrganizationsListComponent(organizationService) {
@@ -36,13 +42,18 @@ System.register(['@angular/core', '../services/organization.service', '../rxjs-o
                 OrganizationsListComponent = __decorate([
                     core_1.Component({
                         selector: 'organizations-list',
-                        templateUrl: 'app/components/organizations-list.component.html'
+                        templateUrl: 'app/components/organizations-list.component.html',
+                        providers: [http_1.HTTP_PROVIDERS, organization_service_1.OrganizationService]
                     }), 
                     __metadata('design:paramtypes', [organization_service_1.OrganizationService])
                 ], OrganizationsListComponent);
                 return OrganizationsListComponent;
             }());
             exports_1("OrganizationsListComponent", OrganizationsListComponent);
+            platform_browser_dynamic_1.bootstrap(OrganizationsListComponent, [
+                http_1.HTTP_PROVIDERS,
+                organization_service_1.OrganizationService
+            ]);
         }
     }
 });
