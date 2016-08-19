@@ -30,9 +30,6 @@ System.register(['@angular/core', '../model/organization', '@angular/platform-br
                     this.submitted = false;
                 }
                 OrganizationFormComponent.prototype.onSubmit = function () { window.location.href = './index'; };
-                OrganizationFormComponent.prototype.getOrganizationsList = function () {
-                    location.href = 'http://localhost:8080/list';
-                };
                 Object.defineProperty(OrganizationFormComponent.prototype, "diagnostic", {
                     get: function () { return JSON.stringify(this.model); },
                     enumerable: true,

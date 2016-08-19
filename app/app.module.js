@@ -1,4 +1,4 @@
-System.register(['@angular/core', '@angular/platform-browser', '@angular/forms', '@angular/http', './components/app.component', './components/organization-form.component', './components/organizations-list.component'], function(exports_1, context_1) {
+System.register(['@angular/core', '@angular/platform-browser', '@angular/forms', '@angular/http', './services/organization.service', './app.routing', './components/app.component', './components/organization-form.component', './components/organizations-list.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['@angular/core', '@angular/platform-browser', '@angular/forms',
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, platform_browser_1, forms_1, http_1, app_component_1, organization_form_component_1, organizations_list_component_1;
+    var core_1, platform_browser_1, forms_1, http_1, organization_service_1, app_routing_1, app_component_1, organization_form_component_1, organizations_list_component_1;
     var AppModule;
     return {
         setters:[
@@ -25,6 +25,12 @@ System.register(['@angular/core', '@angular/platform-browser', '@angular/forms',
             },
             function (http_1_1) {
                 http_1 = http_1_1;
+            },
+            function (organization_service_1_1) {
+                organization_service_1 = organization_service_1_1;
+            },
+            function (app_routing_1_1) {
+                app_routing_1 = app_routing_1_1;
             },
             function (app_component_1_1) {
                 app_component_1 = app_component_1_1;
@@ -41,9 +47,10 @@ System.register(['@angular/core', '@angular/platform-browser', '@angular/forms',
                 }
                 AppModule = __decorate([
                     core_1.NgModule({
-                        imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, http_1.HttpModule, http_1.JsonpModule],
+                        imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, http_1.HttpModule, http_1.JsonpModule, app_routing_1.routing],
                         declarations: [app_component_1.AppComponent, organization_form_component_1.OrganizationFormComponent, organizations_list_component_1.OrganizationsListComponent],
-                        bootstrap: [app_component_1.AppComponent]
+                        bootstrap: [app_component_1.AppComponent],
+                        providers: [organization_service_1.OrganizationService]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppModule);
