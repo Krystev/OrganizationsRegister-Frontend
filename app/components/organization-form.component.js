@@ -30,7 +30,7 @@ System.register(['@angular/core', '../model/organization', '@angular/platform-br
             OrganizationFormComponent = (function () {
                 function OrganizationFormComponent(organizationService) {
                     this.organizationService = organizationService;
-                    this.model = new organization_1.Organization(100, 'VSO', '123dad2', '2016-08-11', 'Emo', 'Kokiche 14', '3000', 'Training', 'Training description');
+                    this.model = new organization_1.Organization(0, '', '', '', '', '', '', '', '');
                 }
                 OrganizationFormComponent.prototype.saveOrganization = function () {
                     var _this = this;

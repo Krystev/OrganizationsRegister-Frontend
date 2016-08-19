@@ -15,7 +15,7 @@ export class OrganizationFormComponent {
 	constructor (private organizationService: OrganizationService){}
 
    
-    model = new Organization(100, 'VSO', '123dad2', '2016-08-11', 'Emo', 'Kokiche 14', '3000', 'Training', 'Training description');
+    model = new Organization(0, '', '', '', '', '', '', '', '');
 
    saveOrganization() {
    this.organizationService.saveOrganization(this.model).subscribe(
