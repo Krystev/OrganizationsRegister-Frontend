@@ -10,7 +10,7 @@ export class Organization {
 	public occupationDescription: string;
 	
 	constructor(
-	public id1: number,
+	public id: number,
 	public organizationName1: string,
 	public registerNumber1: string,
 	public registrationDate1: string,
@@ -20,7 +20,6 @@ export class Organization {
 	public organizationOccupation1: string,
 	public occupationDescription1: string
 	) {
-	this.id = id1;
 	this.organizationName = organizationName1;
 	this.registerNumber = registerNumber1;
 	this.registrationDate = registrationDate1;

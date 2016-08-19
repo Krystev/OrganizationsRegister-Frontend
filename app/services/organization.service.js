@@ -10,7 +10,7 @@ System.register(['@angular/core', '@angular/http', '../model/organization', 'rxj
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, http_1, organization_1, Observable_1;
+    var core_1, http_1, organization_1, Observable_1, http_2;
     var OrganizationService;
     return {
         setters:[
@@ -19,6 +19,7 @@ System.register(['@angular/core', '@angular/http', '../model/organization', 'rxj
             },
             function (http_1_1) {
                 http_1 = http_1_1;
+                http_2 = http_1_1;
             },
             function (organization_1_1) {
                 organization_1 = organization_1_1;
@@ -31,6 +32,7 @@ System.register(['@angular/core', '@angular/http', '../model/organization', 'rxj
                 function OrganizationService(http) {
                     this.http = http;
                     this.organizationsUrl = 'http://localhost:8080/list.json'; // URL to web API
+                    this.saveOrganizationUrl = 'http://localhost:8080/register';
                 }
                 OrganizationService.prototype.getOrganizations = function () {
                     return this.http.get(this.organizationsUrl)
@@ -48,6 +50,14 @@ System.register(['@angular/core', '@angular/http', '../model/organization', 'rxj
                 OrganizationService.prototype.extractData = function (res) {
                     var body = res.json();
                     return body;
+                };
+                OrganizationService.prototype.saveOrganization = function (organization) {
+                    var body = JSON.stringify(organization);
+                    var headers = new http_2.Headers({ 'Content-Type': 'application/json' });
+                    var options = new http_2.RequestOptions({ headers: headers });
+                    return this.http.post(this.saveOrganizationUrl, body, options)
+                        .map(function (res) { return res.json(); })
+                        .catch(this.handleError);
                 };
                 OrganizationService.prototype.handleError = function (error) {
                     var errMsg = (error.message) ? error.message :

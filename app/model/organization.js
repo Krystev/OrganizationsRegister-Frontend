@@ -6,8 +6,8 @@ System.register([], function(exports_1, context_1) {
         setters:[],
         execute: function() {
             Organization = (function () {
-                function Organization(id1, organizationName1, registerNumber1, registrationDate1, ownerName1, organizationAddress1, organizationPostCode1, organizationOccupation1, occupationDescription1) {
-                    this.id1 = id1;
+                function Organization(id, organizationName1, registerNumber1, registrationDate1, ownerName1, organizationAddress1, organizationPostCode1, organizationOccupation1, occupationDescription1) {
+                    this.id = id;
                     this.organizationName1 = organizationName1;
                     this.registerNumber1 = registerNumber1;
                     this.registrationDate1 = registrationDate1;
@@ -16,7 +16,6 @@ System.register([], function(exports_1, context_1) {
                     this.organizationPostCode1 = organizationPostCode1;
                     this.organizationOccupation1 = organizationOccupation1;
                     this.occupationDescription1 = occupationDescription1;
-                    this.id = id1;
                     this.organizationName = organizationName1;
                     this.registerNumber = registerNumber1;
                     this.registrationDate = registrationDate1;

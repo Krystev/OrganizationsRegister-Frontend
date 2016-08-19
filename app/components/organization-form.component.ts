@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Organization } from '../model/organization';
 import { bootstrap } from '@angular/platform-browser-dynamic';
 import { Router } from '@angular/router';
+import { OrganizationService } from '../services/organization.service';
 
 @Component({
     selector: 'organization-form',
@@ -11,13 +12,21 @@ import { Router } from '@angular/router';
 export class OrganizationFormComponent {
    componentName: 'OrganizationFormComponent'
    
-   constructor(private router: Router)
+	constructor (private organizationService: OrganizationService){}
+
    
-    model = new Organization(1, 'VSO', '123dad2', '2016-08-11', 'Emo', 'Kokiche 14', '3000', 'Training', 'Training description');
+    model = new Organization(100, 'VSO', '123dad2', '2016-08-11', 'Emo', 'Kokiche 14', '3000', 'Training', 'Training description');
 
-    submitted = false;
-
-    onSubmit() {window.location.href= './index' }
-  get diagnostic() {return JSON.stringify(this.model); }
+   saveOrganization() {
+   this.organizationService.saveOrganization(this.model).subscribe(
+   data => {this.model = data;},
+   error => alert('Error' + error),
+   () => {
+   console.log("finished " + this.model.organizationName);
+   }
+   );
+   
+   }
+    onSubmit() {this.saveOrganization();}
 }
 bootstrap(OrganizationFormComponent)

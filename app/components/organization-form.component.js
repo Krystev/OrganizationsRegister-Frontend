@@ -1,4 +1,4 @@
-System.register(['@angular/core', '../model/organization', '@angular/platform-browser-dynamic'], function(exports_1, context_1) {
+System.register(['@angular/core', '../model/organization', '@angular/platform-browser-dynamic', '../services/organization.service'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['@angular/core', '../model/organization', '@angular/platform-br
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, organization_1, platform_browser_dynamic_1;
+    var core_1, organization_1, platform_browser_dynamic_1, organization_service_1;
     var OrganizationFormComponent;
     return {
         setters:[
@@ -22,25 +22,29 @@ System.register(['@angular/core', '../model/organization', '@angular/platform-br
             },
             function (platform_browser_dynamic_1_1) {
                 platform_browser_dynamic_1 = platform_browser_dynamic_1_1;
+            },
+            function (organization_service_1_1) {
+                organization_service_1 = organization_service_1_1;
             }],
         execute: function() {
             OrganizationFormComponent = (function () {
-                function OrganizationFormComponent() {
-                    this.model = new organization_1.Organization(1, 'VSO', '123dad2', '2016-08-11', 'Emo', 'Kokiche 14', '3000', 'Training', 'Training description');
-                    this.submitted = false;
+                function OrganizationFormComponent(organizationService) {
+                    this.organizationService = organizationService;
+                    this.model = new organization_1.Organization(100, 'VSO', '123dad2', '2016-08-11', 'Emo', 'Kokiche 14', '3000', 'Training', 'Training description');
                 }
-                OrganizationFormComponent.prototype.onSubmit = function () { window.location.href = './index'; };
-                Object.defineProperty(OrganizationFormComponent.prototype, "diagnostic", {
-                    get: function () { return JSON.stringify(this.model); },
-                    enumerable: true,
-                    configurable: true
-                });
+                OrganizationFormComponent.prototype.saveOrganization = function () {
+                    var _this = this;
+                    this.organizationService.saveOrganization(this.model).subscribe(function (data) { _this.model = data; }, function (error) { return alert('Error' + error); }, function () {
+                        console.log("finished " + _this.model.organizationName);
+                    });
+                };
+                OrganizationFormComponent.prototype.onSubmit = function () { this.saveOrganization(); };
                 OrganizationFormComponent = __decorate([
                     core_1.Component({
                         selector: 'organization-form',
                         templateUrl: 'app/components/organization-form.component.html'
                     }), 
-                    __metadata('design:paramtypes', [])
+                    __metadata('design:paramtypes', [organization_service_1.OrganizationService])
                 ], OrganizationFormComponent);
                 return OrganizationFormComponent;
             }());

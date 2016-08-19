@@ -6,14 +6,14 @@ import { OrganizationsListComponent }      from './components/organizations-list
 const appRoutes: Routes = [
 {
     path: '',
-    redirectTo: '/organization-register'
+    redirectTo: '/organization-register',
     pathMatch: 'full'
-  }
+  },
 
   {
     path: 'organization-register',
     component: OrganizationFormComponent
-  }
+  },
   
   {
     path: 'organizations-list',
