@@ -1,9 +1,9 @@
 .ng-valid[required] {
-  border-left: 4px solid #42A948;
+	border-left: 4px solid #42A948;
 }
 
 .ng-invalid {
-  border-left: 4px solid #a94442;
+	border-left: 4px solid #a94442;
 }
 
 input, textarea {
@@ -12,14 +12,14 @@ input, textarea {
 }
 
 input {
-    width: 100%;
-    padding: 7px 10px;
-    margin: 4px 0;
-    box-sizing: border-box;
-    border-radius: 4px;
-    background-color: #f8f8f8;
-    border: 2px solid #ccc;
-    border-radius: 4px;
+	width: 100%;
+	padding: 7px 10px;
+	margin: 4px 0;
+	box-sizing: border-box;
+	border-radius: 4px;
+	background-color: #f8f8f8;
+	border: 2px solid #ccc;
+	border-radius: 4px;
 }
 
 .container {
@@ -31,7 +31,7 @@ input {
 }
 
 input:focus {
-    border: 1px solid #555;
+	border: 1px solid #555;
 }
 
 table {
@@ -45,9 +45,17 @@ td {
 	padding: 10px 0;
 }
 
-tr:NTH-CHILD(even) {background-color: #f2f2f2}
-tr:HOVER {background-color: #e6e6e6;}
-.columns_names:HOVER {background: none} 
+tr:NTH-CHILD(even) {
+	background-color: #f2f2f2
+}
+
+tr:HOVER {
+	background-color: #e6e6e6;
+}
+
+.columns_names:HOVER {
+	background: none
+}
 
 .organizations_list {
 	padding: 20px;
@@ -79,6 +87,7 @@ h1 {
 	width: 100%;
 	margin: 0 auto;
 }
+
 .form_buttons {
 	text-align: center;
 }
@@ -87,15 +96,13 @@ h1 {
 	margin: 5px auto;
 	width: 200px;
 	padding: 5px 10px;
-  	text-decoration: none;
-  	margin-top: 10px;
-  	display: inline-block;
-  	background-color: #f1f1f1;
-  	border-radius: 4px;
-    cursor: pointer;
+	text-decoration: none;
+	margin-top: 10px;
+	display: inline-block;
+	background-color: #f1f1f1;
+	border-radius: 4px;
+	cursor: pointer;
 }
-
-
 
 .list {
 	margin-top: 10px;
@@ -103,12 +110,12 @@ h1 {
 }
 
 textarea {
-    width: 100%;
-    height: 150px;
-    padding: 7px 10px;
-    box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    background-color: #f8f8f8;
-    resize: none;
+	width: 100%;
+	height: 150px;
+	padding: 7px 10px;
+	box-sizing: border-box;
+	border: 2px solid #ccc;
+	border-radius: 4px;
+	background-color: #f8f8f8;
+	resize: none;
 }

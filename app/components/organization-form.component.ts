@@ -31,7 +31,7 @@ export class OrganizationFormComponent {
 
         this.active = false;
         this.submitted = true;
-        setTimeout(() => this.active = true, 5000);
+        setTimeout(() => {this.active = true}, 2000);
     }
 }
 
