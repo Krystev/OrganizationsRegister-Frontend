@@ -4,21 +4,21 @@ import { OrganizationFormComponent }      from './components/organization-form.c
 import { OrganizationsListComponent }      from './components/organizations-list.component';
 
 const appRoutes: Routes = [
-{
-    path: '',
-    redirectTo: '/organization-register',
-    pathMatch: 'full'
-  },
+    {
+        path: '',
+        redirectTo: '/organization-register',
+        pathMatch: 'full'
+    },
 
-  {
-    path: 'organization-register',
-    component: OrganizationFormComponent
-  },
-  
-  {
-    path: 'organizations-list',
-    component: OrganizationsListComponent
-  }
+    {
+        path: 'organization-register',
+        component: OrganizationFormComponent
+    },
+
+    {
+        path: 'organizations-list',
+        component: OrganizationsListComponent
+    }
 ];
 
 export const routing = RouterModule.forRoot(appRoutes);

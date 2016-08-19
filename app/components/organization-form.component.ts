@@ -16,24 +16,23 @@ export class OrganizationFormComponent {
    	private form: ControlGroup;
    	active = true;
    	submitted = false;
-   	
-	constructor (private organizationService: OrganizationService){}
 
-   
+    constructor(private organizationService: OrganizationService) { }
+
     model = new Organization(0, '', '', '', '', '', '', '', '');
-    
+
     onSubmit() {
     }
 
-   saveOrganization() {
-   
-   this.organizationService.saveOrganization(this.model).subscribe(
-   data => {this.model = data;},
-   error => alert('Error' + error));
-   
-   this.active = false;
-   this.submitted = true;
-   setTimeout(() => this.active = true, 5);
-   }
+    saveOrganization() {
+        this.organizationService.saveOrganization(this.model).subscribe(
+            data => { this.model = data; },
+            error => alert('Error' + error));
+
+        this.active = false;
+        this.submitted = true;
+        setTimeout(() => this.active = true, 5000);
+    }
 }
+
 bootstrap(OrganizationFormComponent)

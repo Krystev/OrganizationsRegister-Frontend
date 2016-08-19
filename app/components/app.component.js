@@ -25,7 +25,7 @@ System.register(['@angular/core'], function(exports_1, context_1) {
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "\n  <h1>{{title}}</h1>\n    <nav>\n      <a routerLink=\"/organization-register\" routerLinkActive=\"active\">Register organization</a>\n      <a routerLink=\"/organizations-list\" routerLinkActive=\"active\">All organizations</a>\n    </nav>\n    <router-outlet></router-outlet>\n",
+                        template: "\n    <nav>\n      <a routerLink=\"/organization-register\" routerLinkActive=\"active\">Register organization</a>\n      <a routerLink=\"/organizations-list\" routerLinkActive=\"active\">All organizations</a>\n    </nav>\n    <router-outlet></router-outlet>\n",
                         styleUrls: ['app/app.component.css'],
                     }), 
                     __metadata('design:paramtypes', [])

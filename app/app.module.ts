@@ -10,9 +10,9 @@ import { OrganizationFormComponent } from './components/organization-form.compon
 import { OrganizationsListComponent } from './components/organizations-list.component';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, HttpModule, JsonpModule, routing],
-  declarations: [ AppComponent, OrganizationFormComponent, OrganizationsListComponent ],
-  bootstrap:    [ AppComponent ],
-  providers: [ OrganizationService ]
+    imports: [BrowserModule, FormsModule, HttpModule, JsonpModule, routing],
+    declarations: [AppComponent, OrganizationFormComponent, OrganizationsListComponent],
+    bootstrap: [AppComponent],
+    providers: [OrganizationService]
 })
 export class AppModule { }
