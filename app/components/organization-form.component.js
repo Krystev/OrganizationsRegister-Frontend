@@ -30,15 +30,19 @@ System.register(['@angular/core', '../model/organization', '@angular/platform-br
             OrganizationFormComponent = (function () {
                 function OrganizationFormComponent(organizationService) {
                     this.organizationService = organizationService;
+                    this.active = true;
+                    this.submitted = false;
                     this.model = new organization_1.Organization(0, '', '', '', '', '', '', '', '');
                 }
+                OrganizationFormComponent.prototype.onSubmit = function () {
+                };
                 OrganizationFormComponent.prototype.saveOrganization = function () {
                     var _this = this;
-                    this.organizationService.saveOrganization(this.model).subscribe(function (data) { _this.model = data; }, function (error) { return alert('Error' + error); }, function () {
-                        console.log("finished " + _this.model.organizationName);
-                    });
+                    this.organizationService.saveOrganization(this.model).subscribe(function (data) { _this.model = data; }, function (error) { return alert('Error' + error); });
+                    this.active = false;
+                    this.submitted = true;
+                    setTimeout(function () { return _this.active = true; }, 5);
                 };
-                OrganizationFormComponent.prototype.onSubmit = function () { this.saveOrganization(); };
                 OrganizationFormComponent = __decorate([
                     core_1.Component({
                         selector: 'organization-form',
