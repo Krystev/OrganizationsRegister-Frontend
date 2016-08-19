@@ -1,6 +1,5 @@
 <div class="container">
 
-	<div [hidden]="submitted">
 		<h1>Register your organization</h1>
 		<form *ngIf="active" (ngSubmit)="onSubmit()"
 			#organizationForm="ngForm">
@@ -54,7 +53,4 @@
 			</div>
 		</form>
 	</div>
-</div>
-<div class="submitted_register" [hidden]="!submitted">Thank you
-	for registration.</div>
 

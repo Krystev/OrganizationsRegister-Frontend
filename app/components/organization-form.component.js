@@ -41,7 +41,7 @@ System.register(['@angular/core', '../model/organization', '@angular/platform-br
                     this.organizationService.saveOrganization(this.model).subscribe(function (data) { _this.model = data; }, function (error) { return alert('Error' + error); });
                     this.active = false;
                     this.submitted = true;
-                    setTimeout(function () { _this.active = true; }, 2000);
+                    setTimeout(function () { return _this.active = true; }, 0);
                 };
                 OrganizationFormComponent = __decorate([
                     core_1.Component({
